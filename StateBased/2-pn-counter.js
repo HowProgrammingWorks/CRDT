@@ -13,14 +13,14 @@ class PNCounter {
     this.#nc = nCounts ? structuredClone(nCounts) : new Array(size).fill(0);
   }
 
-  inc(delta = 1) {
-    if (delta < 0) throw new Error('Negative increment is not allowed');
-    this.#pc[this.#id] += delta;
+  inc(x = 1) {
+    if (x < 0) throw new Error('Negative increment is not allowed');
+    this.#pc[this.#id] += x;
   }
 
-  dec(delta = 1) {
-    if (delta < 0) throw new Error('Negative decrement is not allowed');
-    this.#nc[this.#id] += delta;
+  dec(x = 1) {
+    if (x < 0) throw new Error('Negative decrement is not allowed');
+    this.#nc[this.#id] += x;
   }
 
   merge({ pCounts, nCounts }) {

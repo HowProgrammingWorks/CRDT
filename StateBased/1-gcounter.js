@@ -11,7 +11,7 @@ class GCounter {
     this.#counts = counts ? structuredClone(counts) : new Array(size).fill(0);
   }
 
-  increment(delta = 1) {
+  inc(delta = 1) {
     if (delta < 0) throw new Error('Negative increment is not allowed');
     this.#counts[this.#id] += delta;
   }
@@ -38,13 +38,13 @@ const size = 2;
 
 console.log('Replica 0');
 const counter0 = new GCounter(0, { size });
-counter0.increment();
-counter0.increment();
+counter0.inc();
+counter0.inc();
 console.log({ id0: counter0.counts });
 
 console.log('Replica 1');
 const counter1 = new GCounter(1, { size });
-counter1.increment();
+counter1.inc();
 console.log({ id1: counter1.counts });
 
 console.log('Sync');

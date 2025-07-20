@@ -10,12 +10,12 @@ class Counter {
     this.#id = id;
   }
 
-  inc(delta = 1) {
-    this.#update(delta);
+  inc(x = 1) {
+    this.#update(x);
   }
 
-  dec(delta = 1) {
-    this.#update(-delta);
+  dec(x = 1) {
+    this.#update(-x);
   }
 
   #update(delta) {
