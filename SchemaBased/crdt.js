@@ -31,7 +31,8 @@ const merge = (schema) => (state, delta) => {
     if (value?.deleted) {
       delete result[key];
     } else if (value?.add) {
-      result[key] = Array.from(new Set([...(res || []), ...value.add]));
+      const prev = res || [];
+      result[key] = Array.from(new Set([...prev, ...value.add]));
     } else if (typeof value === 'object' && !Array.isArray(value)) {
       const def = schema[key] || {};
       result[key] = merge(def)(res || {}, value);
