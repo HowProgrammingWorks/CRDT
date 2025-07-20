@@ -1,2 +1,1 @@
-# CRDT
-Conflict-free Data Types
+# Conflict-free Replicated Data Types
