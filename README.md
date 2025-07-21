@@ -3,6 +3,7 @@
 - [State-based CRDTs](./StateBased)
   - G-Counter: Grow-only Counter
   - PN-Counter: Positive-Negative Counter
+  - PN-2G-Counter: Composition of 2 G-Counters
   - G-Set: Grow-only Set
   - 2P-Set: Two-Phase Set
 - [Operation-based CRDTs](./OperationBased)
