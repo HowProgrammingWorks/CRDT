@@ -33,8 +33,8 @@ class PNCounter {
   }
 
   get value() {
-    const pSum = this.#pc.reduce((sum, cur) => sum + cur);
-    const nSum = this.#nc.reduce((sum, cur) => sum + cur);
+    const pSum = this.#pc.reduce((sum, cur) => sum + cur, 0);
+    const nSum = this.#nc.reduce((sum, cur) => sum + cur, 0);
     return pSum - nSum;
   }
 

@@ -11,9 +11,9 @@ class GCounter {
     this.#counts = counts ? structuredClone(counts) : new Array(size).fill(0);
   }
 
-  inc(delta = 1) {
-    if (delta < 0) throw new Error('Negative increment is not allowed');
-    this.#counts[this.#id] += delta;
+  inc(x = 1) {
+    if (x < 0) throw new Error('Negative increment is not allowed');
+    this.#counts[this.#id] += x;
   }
 
   merge(counts) {
