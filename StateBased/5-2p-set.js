@@ -4,32 +4,29 @@ class TwoPhaseSet {
   #added;
   #removed;
 
-  constructor(add = [], remove = []) {
-    this.#added = new Set(add);
-    this.#removed = new Set(remove);
+  constructor({ added = [], removed = [] } = {}) {
+    this.#added = new Set(added);
+    this.#removed = new Set(removed);
   }
 
-  add(element) {
-    this.#added.add(element);
+  add(item) {
+    this.#added.add(item);
   }
 
-  remove(element) {
-    if (this.#added.has(element)) {
-      this.#removed.add(element);
+  remove(item) {
+    if (this.#added.has(item)) {
+      this.#removed.add(item);
     }
   }
 
-  merge(otherAdded, otherRemoved) {
-    for (const el of otherAdded) {
-      this.#added.add(el);
-    }
-    for (const el of otherRemoved) {
-      this.#removed.add(el);
-    }
+  merge({ added, removed } = {}) {
+    for (const item of added) this.#added.add(item);
+    for (const item of removed) this.#removed.add(item);
   }
 
   get value() {
-    return Array.from(this.#added).filter((val) => !this.#removed.has(val));
+    const keep = (item) => !this.#removed.has(item);
+    return Array.from(this.#added).filter(keep);
   }
 
   get added() {
@@ -58,8 +55,8 @@ set1.remove('b');
 console.log({ id1: set1.value });
 
 console.log('Sync');
-set0.merge(set1.added, set1.removed);
-set1.merge(set0.added, set0.removed);
+set0.merge(set1);
+set1.merge(set0);
 console.log({ id0: { added: set0.added, removed: set0.removed } });
 console.log({ id1: { added: set1.added, removed: set1.removed } });
 

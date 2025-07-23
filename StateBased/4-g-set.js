@@ -1,28 +1,26 @@
 'use strict';
 
 class GSet {
-  #set;
+  #items;
 
-  constructor(elements = []) {
-    this.#set = new Set(elements);
+  constructor(items = []) {
+    this.#items = new Set(items);
   }
 
-  add(element) {
-    this.#set.add(element);
+  add(item) {
+    this.#items.add(item);
   }
 
-  merge(otherSet) {
-    for (const el of otherSet) {
-      this.#set.add(el);
-    }
+  merge(instance) {
+    for (const item of instance.set) this.#items.add(item);
   }
 
   get value() {
-    return Array.from(this.#set);
+    return Array.from(this.#items);
   }
 
   get set() {
-    return this.#set;
+    return this.#items;
   }
 }
 
@@ -41,8 +39,8 @@ set1.add('c');
 console.log({ id1: set1.value });
 
 console.log('Sync');
-set0.merge(set1.set);
-set1.merge(set0.set);
+set0.merge(set1);
+set1.merge(set0);
 console.log({ id0: set0.set });
 console.log({ id1: set1.set });
 
