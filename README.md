@@ -6,6 +6,9 @@
   - PN-2G-Counter: Composition of 2 G-Counters
   - G-Set: Grow-only Set
   - 2P-Set: Two-Phase Set
+  - LWW-Set: Last-Writer-Wins Set
+  - OR-Set: Observed-Remove Set
+  - PN-Set: Positive-Negative Set
 - [Operation-based CRDTs](./OperationBased)
   - OP-Counter: Operation-based Counter
   - AC-Counter: Operation-based Accumulated Counter
@@ -13,3 +16,4 @@
   - Δ-G-Counter: Delta-based Grow-only Counter
 - [Schema-based CRDTs](./SchemaBased)
   - Counter: Schema-based Counter
+
