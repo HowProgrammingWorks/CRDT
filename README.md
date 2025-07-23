@@ -2,18 +2,40 @@
 
 - [State-based CRDTs](./StateBased)
   - G-Counter: Grow-only Counter
+    - [G-Counter](./StateBased/1-g-counter.js) OOP style
+    - [G-Counter](./StateBased/0-g-counter.js) Procedural style
   - PN-Counter: Positive-Negative Counter
-  - PN-2G-Counter: Composition of 2 G-Counters
-  - G-Set: Grow-only Set
-  - 2P-Set: Two-Phase Set
-  - LWW-Set: Last-Writer-Wins Set
-  - OR-Set: Observed-Remove Set
-  - PN-Set: Positive-Negative Set
+    - [PN-Counter](./StateBased/2-pn-counter.js): Single class
+    - [PN-2G-Counter](./StateBased/3-pn-2g.js): Composition of 2 G-Counters
+  - [G-Set](./StateBased/4-g-set.js): Grow-only Set
+  - [2P-Set](./StateBased/5-2p-set.js): Two-Phase Set
+  - [LWW-Set](./StateBased/6-lww-set.js): Last-Writer-Wins Set
+  - [OR-Set](./StateBased/7-or-set.js): Observed-Remove Set
+  - [PN-Set](./StateBased/8-pn-set.js): Positive-Negative Set
+  - AW-Set: Add-Wins Set
+  - RW-Set: Remove-Wins Set
+  - MV-Register: Multi-Value Register
+  - LWW-Register: Last-Write-Wins Register
+  - PN-Register: Positive-Negative Register
+  - RGA: Replicated Growable Array
 - [Operation-based CRDTs](./OperationBased)
-  - OP-Counter: Operation-based Counter
-  - AC-Counter: Operation-based Accumulated Counter
+  - [OP-Counter](./OperationBased/1-counter.js): Operation-based Counter
+  - [AC-Counter](./OperationBased/2-accumulated.js): Operation-based Accumulated Counter
+  - 2P-Set: Operation-based Two-Phase Set
+  - LWW-Set: Operation-based Last-Writer-Wins Set
+  - AW-Set: Operation-based Add-Wins Set
+  - RW-Set: Operation-based Remove-Wins Set
 - [Delta-based CRDTs](./DeltaBased)
-  - Δ-G-Counter: Delta-based Grow-only Counter
+  - [Δ-G-Counter](./DeltaBased/1-g-counter.js): Delta-based Grow-only Counter
+  - Δ-PN-Counter: Delta-based Positive-Negative Counter
+  - Δ-G-Set: Delta-based Grow-only Set
+  - Δ-2P-Set: Delta-based Two-Phase Set
+  - Δ-OR-Set: Delta-based Observed-Remove Set
+  - Δ-AW-Set: Delta-based Add-Wins Set
+  - Δ-RW-Set: Delta-based Remove-Wins Set
+  - Δ-LWW-Set: Delta-based Last-Writer-Wins Set
+  - Δ-MV-Register: Delta-based Multi-Value Register
+  - Δ-LWW-Register: Delta-based Last-Writer-Wins Register
+  - Δ-RGA: Delta-based Replicated Growable Array
 - [Schema-based CRDTs](./SchemaBased)
-  - Counter: Schema-based Counter
-
+  - [Counter](./SchemaBased/crdt.js): Schema-based Counter
